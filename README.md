@@ -3,7 +3,7 @@ Please execute the `pre_setup.sh` script
 
 ## Quickly setup
 ```sh
-$ wget -O- https://goo.gl/hyR1vA | bash
+$ wget -O- https://goo.gl/n66wkc | bash
 ```
 
 ## Setup
