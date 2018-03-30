@@ -40,7 +40,8 @@ if  [ -z $PASSWORD ]; then
     useradd -m opadmin && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
 else
     useradd -m opadmin && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
-fiadduser opadmin sudo
+fi
+adduser opadmin sudo
 adduser opadmin root
 
 
