@@ -4,7 +4,15 @@ Please execute the script to setup the original Ubuntu host.
 Please user root user to setup (cmd is: `sudo su -`)
 
 ## Quickly setup
-### Normal nodes (can be used to setup any Ubuntu hosts in Taiwan)
+### Normal node setup (can be used to setup any Ubuntu hosts in Taiwan)
+```sh
+$ wget -O - https://goo.gl/EHgk4v | bash
+```
+or setup with dot files
+```sh
+$ wget -O - https://goo.gl/EHgk4v | bash && wget  -O - https://goo.gl/pvswme | bash
+```
+### Server nodes setup
 #### Without set opadmin's password
 ```sh
 $ wget -O - https://goo.gl/Vs82DV | bash
@@ -21,7 +29,7 @@ $ wget -O setup.sh https://goo.gl/Vs82DV && bash setup.sh opadminpassw0rd && rm 
 ```
 > Then, your password of opadmin user is `opadminpassw0rd`
 
-### Ansible node (Deploy node)
+### Ansible node (Deployment node) setup
 #### Without set opadmin's password
 ```sh
 $ wget -O - https://goo.gl/xhVK2D | bash
