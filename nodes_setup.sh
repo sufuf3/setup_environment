@@ -15,7 +15,13 @@ sed -i "s/security.ubuntu.com/$UBUNTU_APT_SITE/g" /etc/apt/sources.list
 apt update
 apt upgrade -y && \
 apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
-vim nmap iperf iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools python-numpy python-scipy python-matplotlib ipython python-setuptools software-properties-common python3.6 python3-pip python3-dev && \
+vim nmap iperf iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools python-numpy python-scipy python-matplotlib ipython python-setuptools software-properties-common && \
+apt clean
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+python3.6 python3-pip python3-dev && \
 apt clean
 
 
