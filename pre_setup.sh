@@ -34,6 +34,16 @@ apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-
 python3.6 python3-pip python3-dev && \
 apt clean
 
+# Add user
+PASSWORD=$1
+if  [ -z $PASSWORD ]; then
+    useradd -m opadmin && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
+else
+    useradd -m opadmin && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
+fiadduser opadmin sudo
+adduser opadmin root
+
+
 # Local: install Ansible
 apt-get install software-properties-common
 apt-add-repository ppa:ansible/ansible

@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script is pre setup scrpt.
 # Please use root user
+# sh nodes_setup.sh <opadmin's password>
 
 # set the enviroment
 # Local: Set /etc/resolve.cfg
@@ -29,5 +30,14 @@ apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-
 python3.6 python3-pip python3-dev && \
 apt clean
 
+# Add user
+PASSWORD=$1
+if  [ -z $PASSWORD ]; then
+    useradd -m opadmin && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
+else
+    useradd -m opadmin && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
+fi
+adduser opadmin sudo
+adduser opadmin root
 
 echo "Setup finish!"
