@@ -23,6 +23,11 @@ apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-
 vim nmap iperf iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools python-numpy python-scipy python-matplotlib ipython python-setuptools software-properties-common && \
 apt clean
 
+sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
+systemctl reload ssh.service
+service ssh restart
+chkconfig sshd on
+
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
 apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
