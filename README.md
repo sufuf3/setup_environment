@@ -7,8 +7,8 @@ Please execute the `pre_setup.sh` script
 $ wget -O- https://goo.gl/Vs82DV | bash
 ```
 
-### Ansible node
+### Ansible node (Deploy node)
 ```sh
-$ wget -O- https://goo.gl/n66wkc | bash
+$ wget -O- https://goo.gl/xhVK2D | bash
 ```
 
