@@ -52,6 +52,7 @@ adduser opadmin plugdev
 adduser opadmin lxd
 adduser opadmin lpadmin
 adduser opadmin sambashare
+echo "opadmin ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 rm pre_setup_resolve.conf
 
