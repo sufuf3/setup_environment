@@ -20,6 +20,7 @@ vim nmap iperf iperf3 tmux traceroute git sshpass curl openssh-server tree htop 
 apt clean
 
 sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
+sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 systemctl reload ssh.service
 service ssh restart
 chkconfig sshd on
