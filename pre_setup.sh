@@ -28,7 +28,7 @@ systemctl reload ssh.service
 service ssh restart
 chkconfig sshd on
 
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt-get update
 apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
 python3.6 python3-pip python3-dev && \
@@ -47,8 +47,7 @@ adduser opadmin root
 rm pre_setup_resolve.conf
 
 # Local: install Ansible
-apt-get install software-properties-common
-apt-add-repository ppa:ansible/ansible
+apt-add-repository ppa:ansible/ansible -y
 apt-get update
 apt-get install ansible -y
 
