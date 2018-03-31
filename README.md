@@ -32,11 +32,11 @@ $ wget -O - https://goo.gl/Vs82DV | bash
 ```sh
 $ wget -O setup.sh https://goo.gl/Vs82DV && bash setup.sh <password> && rm setup.sh
 ```
-    - example
-    ```sh
-    $ wget -O setup.sh https://goo.gl/Vs82DV && bash setup.sh opadminpassw0rd && rm setup.sh
-    ```
-    > Then, your password of opadmin user is `opadminpassw0rd`
+>   - example  
+      ```
+      $ wget -O setup.sh https://goo.gl/Vs82DV && bash setup.sh opadminpassw0rd && rm setup.sh
+      ```  
+      > Then, your password of opadmin user is `opadminpassw0rd`  
 
 
 ### Ansible node (Deployment node) setup
@@ -52,11 +52,11 @@ $ wget -O - https://goo.gl/xhVK2D | bash
 ```sh
 $ wget -O setup.sh https://goo.gl/xhVK2D && bash setup.sh <password> && rm setup.sh
 ```
-    - example
-    ```sh
-    $ wget -O setup.sh https://goo.gl/xhVK2D && bash setup.sh opadminpassw0rd && rm setup.sh
-    ```
-    > Then, your password of opadmin user is `opadminpassw0rd`
+>   - example  
+      ```
+      $ wget -O setup.sh https://goo.gl/xhVK2D && bash setup.sh opadminpassw0rd && rm setup.sh
+      ```  
+      > Then, your password of opadmin user is `opadminpassw0rd`  
 
 ## Setup with dot files
 Let's add **`&& wget  -O - https://goo.gl/pvswme | bash`** at the end of the above command.
