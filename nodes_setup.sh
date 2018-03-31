@@ -40,6 +40,8 @@ adduser opadmin sudo
 adduser opadmin adm
 adduser opadmin dip
 adduser opadmin cdrom
+adduser opadmin plugdev
+adduser opadmin lxd
 adduser opadmin lpadmin
 adduser opadmin sambashare
 
