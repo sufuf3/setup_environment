@@ -32,13 +32,16 @@ apt clean
 
 # Add user
 PASSWORD=$1
-if  [ -z $PASSWORD ]; then
-    useradd -m opadmin && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
+if  [ -z $PASSWORD ]; then    useradd -m opadmin -s /bin/bash && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
 else
-    useradd -m opadmin && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
+    useradd -m opadmin -s /bin/bash && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
 fi
 adduser opadmin sudo
-adduser opadmin root
+adduser opadmin adm
+adduser opadmin dip
+adduser opadmin cdrom
+adduser opadmin lpadmin
+adduser opadmin sambashare
 
 rm pre_setup_resolve.conf
 
