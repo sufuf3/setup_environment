@@ -66,3 +66,10 @@ $ wget -O - https://goo.gl/Vs82DV | bash && wget  -O - https://goo.gl/pvswme | b
 ```
 
 More information of dot file, please see https://github.com/sufuf3/my-dotfiles
+
+## Memo
+1. If you want to set the hostname, please do the command as the follwoing:
+```sh
+$ hostname -b <my_hostname>
+```
+> After this, you can use `hostname` command to chackout the host name. After you re-login again, you can see the change.
