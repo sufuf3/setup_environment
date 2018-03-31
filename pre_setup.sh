@@ -44,6 +44,7 @@ fi
 adduser opadmin sudo
 adduser opadmin root
 
+rm pre_setup_resolve.conf
 
 # Local: install Ansible
 apt-get install software-properties-common
