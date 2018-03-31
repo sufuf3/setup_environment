@@ -24,17 +24,17 @@ $ wget -O - https://goo.gl/EHgk4v | bash && wget  -O - https://goo.gl/pvswme | b
 
 - **Without set opadmin's password**
 ```sh
-$ wget -O - https://goo.gl/Vs82DV | bash
+$ wget -O - https://goo.gl/xo9DLa | bash
 ```
 > Your password of opadmin user is `OPgreatW0rld`
 
 - **With set opadmin's password**
 ```sh
-$ wget -O setup.sh https://goo.gl/Vs82DV && bash setup.sh <password> && rm setup.sh
+$ wget -O setup.sh https://goo.gl/xo9DLa && bash setup.sh <password> && rm setup.sh
 ```
 >   - example  
       ```
-      $ wget -O setup.sh https://goo.gl/Vs82DV && bash setup.sh opadminpassw0rd && rm setup.sh
+      $ wget -O setup.sh https://goo.gl/xo9DLa && bash setup.sh opadminpassw0rd && rm setup.sh
       ```  
       > Then, your password of opadmin user is `opadminpassw0rd`  
 
