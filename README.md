@@ -10,12 +10,12 @@ Please user root user to setup (cmd is: `sudo su -`)
 
 - **Set up without dot files**
 ```sh
-$ wget -O - https://goo.gl/EHgk4v | bash
+$ wget -O - https://goo.gl/EHgk4v | sh
 ```
 
 - **Set up with dot files**
 ```sh
-$ wget -O - https://goo.gl/EHgk4v | bash && wget  -O - https://goo.gl/pvswme | bash
+$ wget -O - https://goo.gl/EHgk4v | sh && wget  -O - https://goo.gl/pvswme | bash
 ```
 
 
@@ -24,17 +24,17 @@ $ wget -O - https://goo.gl/EHgk4v | bash && wget  -O - https://goo.gl/pvswme | b
 
 - **Without set opadmin's password**
 ```sh
-$ wget -O - https://goo.gl/xo9DLa | bash
+$ wget -O - https://goo.gl/xo9DLa | sh
 ```
 > Your password of opadmin user is `OPgreatW0rld`
 
 - **With set opadmin's password**
 ```sh
-$ wget -O setup.sh https://goo.gl/xo9DLa && bash setup.sh <password> && rm setup.sh
+$ wget -O setup.sh https://goo.gl/xo9DLa && sh setup.sh <password> && rm setup.sh
 ```
 >   - example  
       ```
-      $ wget -O setup.sh https://goo.gl/xo9DLa && bash setup.sh opadminpassw0rd && rm setup.sh
+      $ wget -O setup.sh https://goo.gl/xo9DLa && sh setup.sh opadminpassw0rd && rm setup.sh
       ```  
       > Then, your password of opadmin user is `opadminpassw0rd`  
 
@@ -44,17 +44,17 @@ $ wget -O setup.sh https://goo.gl/xo9DLa && bash setup.sh <password> && rm setup
 
 - **Without set opadmin's password**
 ```sh
-$ wget -O - https://goo.gl/xhVK2D | bash
+$ wget -O - https://goo.gl/xhVK2D | sh
 ```
 > Your password of opadmin user is `OPgreatW0rld`
 
 - **With set opadmin's password**
 ```sh
-$ wget -O setup.sh https://goo.gl/xhVK2D && bash setup.sh <password> && rm setup.sh
+$ wget -O setup.sh https://goo.gl/xhVK2D && sh setup.sh <password> && rm setup.sh
 ```
 >   - example  
       ```
-      $ wget -O setup.sh https://goo.gl/xhVK2D && bash setup.sh opadminpassw0rd && rm setup.sh
+      $ wget -O setup.sh https://goo.gl/xhVK2D && sh setup.sh opadminpassw0rd && rm setup.sh
       ```  
       > Then, your password of opadmin user is `opadminpassw0rd`  
 
@@ -62,7 +62,7 @@ $ wget -O setup.sh https://goo.gl/xhVK2D && bash setup.sh <password> && rm setup
 Let's add **`&& wget  -O - https://goo.gl/pvswme | bash`** at the end of the above command.
 - Example
 ```sh
-$ wget -O - https://goo.gl/Vs82DV | bash && wget  -O - https://goo.gl/pvswme | bash
+$ wget -O - https://goo.gl/Vs82DV | sh && wget  -O - https://goo.gl/pvswme | bash
 ```
 
 More information of dot file, please see https://github.com/sufuf3/my-dotfiles
