@@ -73,3 +73,14 @@ More information of dot file, please see https://github.com/sufuf3/my-dotfiles
 $ hostname -b <my_hostname> &&　sed -i "s/localhost/<my_hostname>/g" /etc/hostname
 ```
 > After this, you can use `hostname` command to chackout the host name. After you re-login again, you can see the change.
+
+### CentOS setup
+- Ansible on CentOS setup
+```sh
+$ wget -O - http://bit.ly/2JuhqAB | sh
+```
+
+- CentoOS Server(k8s nodes)
+```sh
+$ wget -O - http://bit.ly/2Jrsj66 | sh
+```
