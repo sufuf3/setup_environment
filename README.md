@@ -78,9 +78,13 @@ $ hostname -b <my_hostname> &&　sed -i "s/localhost/<my_hostname>/g" /etc/hostn
 - Ansible on CentOS setup
 ```sh
 $ wget -O - http://bit.ly/2JuhqAB | sh
+or
+$ curl -Lo- http://bit.ly/2JuhqAB | sh
 ```
 
 - CentoOS Server(k8s nodes)
 ```sh
 $ wget -O - http://bit.ly/2Jrsj66 | sh
+or
+$ curl -Lo- http://bit.ly/2Jrsj66 | sh
 ```

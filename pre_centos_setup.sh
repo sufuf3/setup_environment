@@ -4,17 +4,15 @@
 
 # set the enviroment
 # Local: Set /etc/resolve.cfg
-wget https://goo.gl/ojQzx5 -O pre_setup_resolve.conf
+curl https://goo.gl/ojQzx5 -Lo pre_setup_resolve.conf
 cp pre_setup_resolve.conf /etc/resolve.conf
 # Maybe need to add the following lines, if the hosts use server version OS image
 # echo "dns-nameservers 8.8.8.8,8.8.4.4" >> /etc/network/interface
 
-# Network restart & install package
-/etc/init.d/networking restart
-
 yum update
 yum upgrade -y
-
+setenforce 0
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 # Timezone Set
 #TZ=Asia/Taipei
 #export DEBIAN_FRONTEND=noninteractive
@@ -24,15 +22,14 @@ yum upgrade -y
 timedatectl set-timezone Asia/Taipei
 
 yum install -y \
-vim nmap iperf iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools python-setuptools software-properties-common yum-utils groupinstall development && \
-apt clean
+vim nmap iperf wget iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools
 sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 systemctl reload ssh.service
-service ssh restart
-chkconfig sshd on
+systemctl restart sshd.service
+systemctl status sshd.service
 
 cd ~/ && yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 yum -y install python36u python36u-pip python36u-devel
