@@ -5,7 +5,7 @@
 
 # set the enviroment
 # Local: Set /etc/resolve.cfg
-curl https://goo.gl/ojQzx5 -Lo pre_setup_resolve.conf
+curl https://goo.gl/ojQzx5 -Lo ~/pre_setup_resolve.conf
 cp pre_setup_resolve.conf /etc/resolve.conf
 
 yum update
@@ -21,10 +21,10 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 #ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 timedatectl set-timezone Asia/Taipei
 
-yum install -y \
-vim nmap iperf wget iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools
-sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
+yum install vim nmap iperf wget iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools -y
+sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/#PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 systemctl reload ssh.service
@@ -56,6 +56,6 @@ adduser opadmin lpadmin
 adduser opadmin sambashare
 echo "opadmin ALL=NOPASSWD: ALL" >> /etc/sudoers
 
-rm pre_setup_resolve.conf
+rm ~/pre_setup_resolve.conf
 
 echo "Setup finish!"
