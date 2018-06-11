@@ -8,7 +8,7 @@
 curl https://goo.gl/ojQzx5 -Lo ~/pre_setup_resolve.conf
 cp pre_setup_resolve.conf /etc/resolve.conf
 
-yum update
+yum update -y
 yum upgrade -y
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
