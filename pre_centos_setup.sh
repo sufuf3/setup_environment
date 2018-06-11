@@ -9,7 +9,7 @@ cp pre_setup_resolve.conf /etc/resolve.conf
 # Maybe need to add the following lines, if the hosts use server version OS image
 # echo "dns-nameservers 8.8.8.8,8.8.4.4" >> /etc/network/interface
 
-yum update
+yum update -y
 yum upgrade -y
 setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
