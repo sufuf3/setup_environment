@@ -23,10 +23,13 @@ timedatectl set-timezone Asia/Taipei
 
 yum install -y \
 vim nmap iperf wget iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools
+sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/#PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
+sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
+
 systemctl reload ssh.service
 systemctl restart sshd.service
 systemctl status sshd.service
