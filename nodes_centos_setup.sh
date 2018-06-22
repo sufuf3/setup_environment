@@ -22,15 +22,16 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 timedatectl set-timezone Asia/Taipei
 
 yum install vim nmap iperf wget iperf3 tmux traceroute git sshpass curl openssh-server tree htop build-essential bash-completion python-pip python-dev build-essential python-setuptools -y
-sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-sed -i "s/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
-sed -i "s/#PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
-systemctl reload ssh.service
-systemctl restart sshd.service
-systemctl status sshd.service
+# Default root can ssh
+#sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+#sed -i "s/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
+#sed -i "s/#PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
+#sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
+#sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config
+#sed -i "s/PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
+#systemctl reload ssh.service
+#systemctl restart sshd.service
+#systemctl status sshd.service
 
 cd ~/ && yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 yum -y install python36u python36u-pip python36u-devel
@@ -47,15 +48,15 @@ else
     sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no opadmin@localhost "touch ~/.sudo_as_admin_successful"
     echo "root:$PASSWORD" | chpasswd && passwd -u root
 fi
-adduser opadmin sudo
-adduser opadmin adm
-adduser opadmin dip
-adduser opadmin cdrom
-adduser opadmin plugdev
-adduser opadmin lxd
-adduser opadmin lpadmin
-adduser opadmin sambashare
-echo "opadmin ALL=NOPASSWD: ALL" >> /etc/sudoers
+#adduser opadmin sudo
+#adduser opadmin adm
+#adduser opadmin dip
+#adduser opadmin cdrom
+#adduser opadmin plugdev
+#adduser opadmin lxd
+#adduser opadmin lpadmin
+#adduser opadmin sambashare
+#echo "opadmin ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 rm ~/pre_setup_resolve.conf
 
