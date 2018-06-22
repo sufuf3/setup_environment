@@ -35,19 +35,19 @@ yum install vim nmap iperf wget iperf3 tmux traceroute git sshpass curl openssh-
 
 cd ~/ && yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 yum -y install python36u python36u-pip python36u-devel
-
+iptables -F
 
 # Add user
-PASSWORD=$1
-if  [ -z $PASSWORD ]; then
-    useradd -m opadmin -s /bin/bash && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
-    sshpass -p OPgreatW0rld ssh -o StrictHostKeyChecking=no opadmin@localhost "touch ~/.sudo_as_admin_successful"
-    echo "root:OPgreatW0rld" | chpasswd && passwd -u root
-else
-    useradd -m opadmin -s /bin/bash && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
-    sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no opadmin@localhost "touch ~/.sudo_as_admin_successful"
-    echo "root:$PASSWORD" | chpasswd && passwd -u root
-fi
+#PASSWORD=$1
+#if  [ -z $PASSWORD ]; then
+#    useradd -m opadmin -s /bin/bash && echo "opadmin:OPgreatW0rld" | chpasswd && passwd -u opadmin
+#    sshpass -p OPgreatW0rld ssh -o StrictHostKeyChecking=no opadmin@localhost "touch ~/.sudo_as_admin_successful"
+#    echo "root:OPgreatW0rld" | chpasswd && passwd -u root
+#else
+#    useradd -m opadmin -s /bin/bash && echo "opadmin:$PASSWORD" | chpasswd && passwd -u opadmin
+#    sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no opadmin@localhost "touch ~/.sudo_as_admin_successful"
+#    echo "root:$PASSWORD" | chpasswd && passwd -u root
+#fi
 #adduser opadmin sudo
 #adduser opadmin adm
 #adduser opadmin dip
